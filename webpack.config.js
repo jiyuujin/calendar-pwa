@@ -5,6 +5,8 @@ module.exports = ({ mode }) => {
     return {
         mode,
         output: {
+            path: __dirname + '/dist',
+            publicPath: '/',
             filename: '[name].[chunkhash:8].js',
             assetModuleFilename: 'img/[name].[hash:7][ext]'
         },
