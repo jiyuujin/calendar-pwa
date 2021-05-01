@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Calendar App</title>
+    <meta name="generator" content="PWA Starter Kit - Calendar App">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="PWA Starter Kit - Calendar App">
+    <base href="/">
+    <meta name="theme-color" content="#3f51b5">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Calendar App">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Calendar App">
+    <meta name="msapplication-TileImage" content="images/icon/calendar-144.png">
+    <meta name="msapplication-TileColor" content="#3f51b5">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@jiyuujinlab">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="calendar-app">
+    <meta property="og:image" content="images/icon/bakeneko2-144.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@nekohack/normalize.css/dist/index.css">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="images/icon/calendar-72.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/icon/calendar-72.png">
+    <link rel="apple-touch-icon" sizes="96x96" href="images/icon/calendar-96.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/icon/calendar-144.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="images/icon/calendar-192.png">
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                    console.log('Registration was successful: ', registration.scope);
+                }, function(err) {
+                    console.log('Registration failed: ', err);
+                });
+            });
+        }
+    </script>
+</head>
+<body onMouseDown="return false;">
+<x-calendar></x-calendar>
+<noscript>
+    Please enable JavaScript to view this website.
+</noscript>
+<script type="module" src="src/index.ts" defer></script>
+<script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js" defer></script>
+</body>
+</html>

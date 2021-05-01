@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "module": "esnext",
+    "target": "es6",
+    "lib": ["dom", "esnext"],
+    "outDir": "./dist",
+    "strictNullChecks": true,
+    "experimentalDecorators": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "moduleResolution": "node",
+    "sourceMap": true
+  }
+}
