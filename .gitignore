@@ -4,6 +4,10 @@ yarn.lock
 
 dist
 
+build
+
+src/**/*.js
+
 .idea
 
 *.log
