@@ -40,14 +40,14 @@ class Calendar extends LitElement {
         pointer-events: none;
       }
 
-      .container {
-        position: relative;
-        min-width: 600px;
-        min-height: 400px;
-      }
-
       /* 横向き */
       @media screen and (orientation: landscape) {
+        .container {
+          position: relative;
+          min-width: 600px;
+          min-height: 400px;
+        }
+
         .time {
           top: 50%;
           left: 50%;
@@ -92,13 +92,13 @@ class Calendar extends LitElement {
         .current {
           border-bottom: solid 4px #d93d33;
         }
-
-        .sorry {
-          display: none;
-        }
       }
 
       @media screen and (max-width: 896px) {
+        .container {
+          position: relative;
+        }
+
         .time {
           top: 0;
           left: 8%;
@@ -111,26 +111,29 @@ class Calendar extends LitElement {
 
       /* 縦向き */
       @media screen and (orientation: portrait) {
+        .container {
+          position: relative;
+          min-width: 300px;
+          min-height: 400px;
+        }
+
         .time {
-          display: none;
+          top: 50%;
+          left: 50%;
+          position: absolute;
+          padding: 0;
+          margin: 0 auto;
+          transform: translateY(100%) translateX(-50%);
+        }
+
+        .time span {
+          display: inline-block;
+          vertical-align: middle;
+          font-size: 2em;
         }
 
         .calendar {
           display: none;
-        }
-
-        .sorry {
-          height: 1200px;
-          line-height: 1200px;
-          text-align: center;
-        }
-
-        .sorry p {
-          display: inline-block;
-          vertical-align: middle;
-          margin: 12px auto 0;
-          font-size: 1.8em;
-          line-height: 1.2;
         }
       }
     `
@@ -159,9 +162,6 @@ class Calendar extends LitElement {
               </li>
             `)}
           </ul>
-        </div>
-        <div class="sorry">
-          <p>Please start sideways</p>
         </div>
       </div>
     `
