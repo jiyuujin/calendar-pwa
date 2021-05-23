@@ -28,7 +28,7 @@ class Calendar extends LitElement {
     super.connectedCallback()
     window.setInterval(() => {
       const dateTime = new Date(getJPStandardDateTime())
-      this.date = `${getDoubleDigits(dateTime.getFullYear())}/${getDoubleDigits(dateTime.getMonth())}/${getDoubleDigits(dateTime.getDate())}`
+      this.date = `${getDoubleDigits(dateTime.getFullYear())}/${getDoubleDigits(dateTime.getMonth() + 1)}/${getDoubleDigits(dateTime.getDate())}`
       this.time = `${getDoubleDigits(dateTime.getHours())}:${getDoubleDigits(dateTime.getMinutes())}:${getDoubleDigits(dateTime.getSeconds())}`
     }, 50)
   }
