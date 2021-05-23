@@ -6,6 +6,9 @@ class Calendar extends LitElement {
   private weekdays: String[] = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su']
 
   @property({ type: String })
+  private date: String = ''
+
+  @property({ type: String })
   private time: String = ''
 
   constructor() {
@@ -25,6 +28,7 @@ class Calendar extends LitElement {
     super.connectedCallback()
     window.setInterval(() => {
       const dateTime = new Date(getJPStandardDateTime())
+      this.date = `${getDoubleDigits(dateTime.getFullYear())}/${getDoubleDigits(dateTime.getMonth())}/${getDoubleDigits(dateTime.getDate())}`
       this.time = `${getDoubleDigits(dateTime.getHours())}:${getDoubleDigits(dateTime.getMinutes())}:${getDoubleDigits(dateTime.getSeconds())}`
     }, 50)
   }
@@ -60,6 +64,10 @@ class Calendar extends LitElement {
         .time span {
           text-align: center;
           font-size: 2em;
+        }
+
+        .date {
+          display: none;
         }
 
         .calendar {
@@ -104,6 +112,11 @@ class Calendar extends LitElement {
           left: 8%;
         }
 
+        .date {
+          top: 20%;
+          left: 8%;
+        }
+
         .calendar {
           top: 0;
         }
@@ -132,6 +145,21 @@ class Calendar extends LitElement {
           font-size: 2em;
         }
 
+        .date {
+          top: 100%;
+          left: 50%;
+          position: absolute;
+          padding: 0;
+          margin: 0 auto;
+          transform: translateY(100%) translateX(-50%);
+        }
+
+        .date span {
+          display: inline-block;
+          vertical-align: middle;
+          font-size: 2em;
+        }
+
         .calendar {
           display: none;
         }
@@ -144,6 +172,9 @@ class Calendar extends LitElement {
       <div class="container">
         <div class="time">
           <span>${this.time}</span>
+        </div>
+        <div class="date">
+          <span>${this.date}</span>
         </div>
         <div class="calendar">
           <ul>
