@@ -63,7 +63,7 @@ class Calendar extends LitElement {
 
         .time span {
           text-align: center;
-          font-size: 2em;
+          font-size: 2.4em;
         }
 
         .date {
@@ -87,18 +87,21 @@ class Calendar extends LitElement {
 
         .calendar li {
           list-style: none;
-          width: 3.6em;
+          width: 4.8em;
           padding: 1.2rem 1.4rem;
           margin: 0;
         }
 
         .calendar span {
           text-align: center;
-          font-size: 2em;
+          font-size: 2.4em;
         }
 
         .current {
-          border-bottom: solid 4px #d93d33;
+          padding: 4px;
+          background-color: #d93d33;
+          color: #fff;
+          border-radius: 24px;
         }
       }
 
@@ -142,7 +145,7 @@ class Calendar extends LitElement {
         .time span {
           display: inline-block;
           vertical-align: middle;
-          font-size: 2em;
+          font-size: 2.4em;
         }
 
         .date {
@@ -157,7 +160,7 @@ class Calendar extends LitElement {
         .date span {
           display: inline-block;
           vertical-align: middle;
-          font-size: 2em;
+          font-size: 2.4em;
         }
 
         .calendar {
