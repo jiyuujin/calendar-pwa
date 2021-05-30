@@ -17,7 +17,7 @@ class Calendar extends LitElement {
 
   get start() {
     const dateTime = new Date(getJPStandardDateTime())
-    const interval = dateTime.getDay() !== 0 ? dateTime.getDay() : -7
+    const interval = dateTime.getDay() !== 0 ? dateTime.getDay() : 7
     return new Date(
       dateTime.getFullYear(),
       dateTime.getMonth(),
