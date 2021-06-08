@@ -204,12 +204,20 @@ class Calendar extends LitElement {
 
   getDay(date: Date, interval: number) {
     const dateTime = new Date(getJPStandardDateTime(date))
-    return new Date(dateTime.getTime() + 1000 * 60 * 60 * 24 * interval).getDate()
+    return this.getDoubleDigestNumber(new Date(dateTime.getTime() + 1000 * 60 * 60 * 24 * interval).getDate())
   }
 
   getStyleInCurrentDay(date: Date, interval: number) {
     const dateTime = new Date(getJPStandardDateTime())
-    return this.getDay(date, interval) === dateTime.getDate() ? 'current' : ''
+    return this.getDay(date, interval) === this.getDoubleDigestNumber(dateTime.getDate()) ? 'current' : ''
+  }
+
+  getDoubleDigestNumber(number: number) {
+    if (number < 10) {
+      return `0${number}`
+    } else {
+      return number
+    }
   }
 }
 
